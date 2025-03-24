@@ -21,5 +21,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Vite::prefetch(concurrency: 3);
+        // Ensure API routes are registered
+        if (file_exists(base_path('routes/api.php'))) {
+            require base_path('routes/api.php');
+        }
     }
 }
