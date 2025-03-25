@@ -2,10 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Service\ServiceController;
-
-
-Route::get('/test-api', function () {
-    return response()->json(['message' => 'API is working!']);
-});
+use App\Http\Controllers\Application\AppController;
 
 Route::apiResource('services', ServiceController::class);
+Route::apiResource('applications', AppController::class);

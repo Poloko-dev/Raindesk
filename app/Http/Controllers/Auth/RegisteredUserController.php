@@ -38,6 +38,7 @@ class RegisteredUserController extends Controller
             'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'phone' => ['required', 'string', 'regex:/^(\+266[256]\d{7}|\+27[6-8]\d{8})$/'],
+            'role' => 'required|string|in:admin,customer',
         ]);
         
         $user = User::create([
@@ -46,6 +47,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'phone' => $request->phone,
             'status' => 'active',
+            'role' => $request->role,
         ]);
 
         Mail::to($user->email)->send(new UserVerificationMail($user));
