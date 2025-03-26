@@ -56,29 +56,48 @@ class AppController extends Controller
     /**
      * Delete an application.
      */
-    public function destroy(Application $application)
+    public function destroy(Request $request)
     {
-        if ($application->user_id !== Auth::id()) {
-            return response()->json(['message' => 'Unauthorized'], 403);
-        }
+        // Validate the request to ensure the application ID is provided
+        $request->validate([
+            'application_id' => 'required|exists:applications,id',
+        ]);    
 
+        $application = Application::find($request->application_id);
+
+        // Delete the application
         $application->delete();
 
-        return response()->json(['message' => 'Application deleted successfully']);
+        return response()->json(['message' => 'Application deleted successfully'], 200);
     }
 
     /**
      * Block a user from accessing the application.
      */
-    public function block(Application $application)
+    public function block(Request $request)
     {
-        if ($application->user_id !== Auth::id()) {
-            return response()->json(['message' => 'Unauthorized'], 403);
+        // Validate the application ID in the request
+        $request->validate([
+            'application_id' => 'required|exists:applications,id',
+        ]);
+
+        // Find the application by ID
+        $application = Application::find($request->application_id);
+
+        // Ensure the application exists
+        if (!$application) {
+            return response()->json(['message' => 'Application not found'], 404);
         }
-
-        $application->update(['status' => 'inactive']);
-
-        return response()->json(['message' => 'User blocked from accessing the application']);
+       if($application->status == 'active'){
+            $application->update(['status' => 'inactive']);
+            return response()->json(['message' => 'Application blocked from access'], 200);
+       }
+        else{
+            $application->update(['status' => 'active']);
+            return response()->json(['message' => 'Application unblocked to access'], 200);
+        }
+        
     }
+
 }
 

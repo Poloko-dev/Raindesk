@@ -6,3 +6,4 @@ use App\Http\Controllers\Application\AppController;
 
 Route::apiResource('services', ServiceController::class);
 Route::apiResource('applications', AppController::class);
+Route::post('applications/block', [AppController::class, 'block']);
