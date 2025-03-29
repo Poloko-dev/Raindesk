@@ -19,7 +19,7 @@ export default function SideBar({
                 {/* Replace the Link elements with SideBarLink components */}
                 <div className="flex flex-row items-center">
                     <div className="h-6 w-6">
-                        <img src="icons\home_24dp_4B77D1_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
+                        <img src="icons\home_24dp_4B77D1_FILL0_wght400_GRAD0_opsz24 - Copy.png" alt="Icon" />
                     </div>
                     <NavLink
                         href={route('dashboard')}
@@ -30,88 +30,87 @@ export default function SideBar({
                 </div>
                 <div className="flex flex-row items-center">
                     <div className="h-6 w-6">
-                        <img src="icons\support_agent_24dp_75FBFD_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
+                        <img src="icons\support_agent_24dp_4B77D1_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
                     </div>
                     <NavLink
-                        href={route('dashboard')}
-                        active={route().current('dashboard')}
+                        href={route('services')}
+                        active={route().current('services')}
                     >
                         Available Services
                     </NavLink>
-                </div>
-               
+                </div>              
                 <div className="flex flex-row items-center">
                     <div className="h-6 w-6">
-                        <img src="icons\manage_accounts_24dp_D08216_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
+                        <img src="icons\api_24dp_4B77D1_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
                     </div>
                     <NavLink
-                        href={route('dashboard')}
-                        active={route().current('dashboard')}
-                    >
-                        Account Management
-                    </NavLink>
-                </div>
-                <div className="flex flex-row items-center">
-                    <div className="h-6 w-6">
-                        <img src="icons\api_24dp_75FB4C_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
-                    </div>
-                    <NavLink
-                        href={route('dashboard')}
-                        active={route().current('dashboard')}
+                        href={route('api&apps')}
+                        active={route().current('api&apps')}
                     >
                         API & External Application
                     </NavLink>
                 </div>
                 <div className="flex flex-row items-center">
                     <div className="h-6 w-6">
-                        <img src="icons\group_24dp_FFFF55_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
+                        <img src="icons\payments_24dp_4B77D1_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
                     </div>
                     <NavLink
-                        href={route('dashboard')}
-                        active={route().current('dashboard')}
-                    >
-                        Users & Access Control
-                    </NavLink>
-                </div>
-                <div className="flex flex-row items-center">
-                    <div className="h-6 w-6">
-                        <img src="icons\payments_24dp_48752C_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
-                    </div>
-                    <NavLink
-                        href={route('dashboard')}
-                        active={route().current('dashboard')}
+                        href={route('payments&subscription')}
+                        active={route().current('payments&subscription')}
                     >
                         Payment & Subscription
                     </NavLink>
                 </div>
                 <div className="flex flex-row items-center">
                     <div className="h-6 w-6">
-                        <img src="icons\partner_reports_24dp_EA3323_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
+                        <img src="icons\group_24dp_4B77D1_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
                     </div>
                     <NavLink
-                        href={route('dashboard')}
-                        active={route().current('dashboard')}
+                        href={route('useraccess')}
+                        active={route().current('useraccess')}
                     >
-                        Reports & Logs
+                        Users & Access Control
                     </NavLink>
                 </div>
                 <div className="flex flex-row items-center">
                     <div className="h-6 w-6">
-                        <img src="icons\settings_account_box_24dp_EA3323_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
+                        <img src="icons\manage_accounts_24dp_4B77D1_FILL0_wght400_GRAD0_opsz24 (1).png" alt="Icon" />
                     </div>
                     <NavLink
-                        href={route('dashboard')}
-                        active={route().current('dashboard')}
+                        href={route('accountmanagement')}
+                        active={route().current('accountmanagement')}
+                    >
+                        Account Management
+                    </NavLink>
+                </div>
+                <div className="flex flex-row items-center">
+                    <div className="h-6 w-6">
+                        <img src="icons\settings_account_box_24dp_4B77D1_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
+                    </div>
+                    <NavLink
+                        href={route('settings&sys')}
+                        active={route().current('settings&sys')}
                     >
                         Settings & System Management
                     </NavLink>
                 </div>
+                <div className="flex flex-row items-center">
+                    <div className="h-6 w-6">
+                        <img src="icons\partner_reports_24dp_4B77D1_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
+                    </div>
+                    <NavLink
+                        href={route('reports&logs')}
+                        active={route().current('reports&logs')}
+                    >
+                        Reports & Logs
+                    </NavLink>
+                </div> 
                 {/* Add more links with icons as needed */}
             </ul>
             <h2 className="text-lg font-semibold text-gray-600 mt-4">Documentation</h2>
             <div className="flex flex-row items-center">
                 <div className="h-6 w-6">
-                    <img src="icons\api_24dp_75FB4C_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
+                    <img src="icons\api_24dp_4B77D1_FILL0_wght400_GRAD0_opsz24.png" alt="Icon" />
                 </div>
                 <NavLink
                     href={route('dashboard')}

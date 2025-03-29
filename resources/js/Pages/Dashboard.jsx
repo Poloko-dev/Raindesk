@@ -1,13 +1,18 @@
+import ThemeToggle from '@/Components/ThemeToggle';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+
 import { Head } from '@inertiajs/react';
 
 export default function Dashboard() {
     return (
         <AuthenticatedLayout
             header={
-                <h2 className="text-xl font-semibold leading-tight text-blue-900">
-                    Dashboard
-                </h2>
+                <div className="flex justify-between items-center">
+                    <h2 className="text-xl font-semibold leading-tight text-blue-900">
+                        Dashboard
+                    </h2>
+                   <ThemeToggle />
+                </div>
             }
         >
             <Head title="Dashboard" />
