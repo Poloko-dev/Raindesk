@@ -34,7 +34,7 @@ export default function AuthenticatedLayout({ header, children }) {
             <div className="flex my-auto">
                 <SearchBar placeholder="Search ..." onSearch={handleSearch} />
             </div>
-
+ 
             {/* User dropdown container right aligned*/}
             <div className="hidden sm:ms-6 sm:flex sm:items-center">
             {/* Notification Icon button */}
